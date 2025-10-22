@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Variables</title>
+</head>
+<body>
+  <h1>JavaScript Variables </h1>
+  
+  <h2>variables like labeled boxes</h2>
+  
+  <script>
+    // 1. let - like a box you can change
+    let message = "Hello World";
+    console.log(message);
+    
+    let number = 10;
+    console.log(number);
+    
+    // You can change what's inside
+    number = 20;
+    console.log(number);
+    
+    // 2. const - like a locked box (can't change)
+    const fixedNumber = 30;
+    console.log(fixedNumber);
+    
+    // This would ERROR because you can't change const:
+    // fixedNumber = 40;
+    
+    // 3. var - old way (like let but different rules)
+    var oldNumber = 40;
+    console.log(oldNumber);
+    
+    // Checking what type of data is in the box
+    console.log(typeof message); // "string" (text)
+    console.log(typeof number);  // "number"
+    
+    // More examples:
+    let price = 9.99;        // decimal number
+    let name = "John";       // text (string)
+    let isStudent = true;    // true/false (boolean)
+    let emptyBox;            // empty box (undefined)
+    
+    console.log(price);
+    console.log(name);
+    console.log(isStudent);
+    console.log(emptyBox);
+    
+    // You can even change the type of data
+    let myVariable = "I am text";
+    console.log(myVariable);
+    
+    myVariable = 100;  // Now it's a number!
+    console.log(myVariable);
+  </script>
+
+  <h3>Simple Rules:</h3>
+  <ul>
+    <li><strong>let</strong> = Can change later</li>
+    <li><strong>const</strong> = Cannot change (constant)</li>
+    <li><strong>var</strong> = Old way (use let instead)</li>
+    <li>Use const most of the time</li>
+    <li>Use let only when you need to change the value</li>
+  </ul>
+  
+  <p>Open browser console (F12) to see the output!</p>
+</body>
+</html>

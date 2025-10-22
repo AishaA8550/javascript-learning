@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Booleans</title>
+</head>
+<body>
+  <h1>JavaScript Booleans - True or False</h1>
+  
+  <script>
+    // Booleans are like YES/NO switches
+    let isSunny = true;    // YES, it's sunny
+    let isRaining = false; // NO, it's not raining
+    
+    console.log("Is it sunny?", isSunny);
+    console.log("Is it raining?", isRaining);
+    
+    // ====================
+    // IF statements - like making decisions
+    // ====================
+    
+    if (isSunny) {
+      console.log("Let's go to the beach!");
+    } else {
+      console.log("Let's stay inside");
+    }
+    
+    let age = 18;
+    
+    if (age >= 18) {
+      console.log("You can vote!");
+    } else {
+      console.log("You cannot vote yet");
+    }
+    
+    // ====================
+    // Comparison operators - like asking questions
+    // ====================
+    
+    console.log(10 > 5);   // true (10 is greater than 5)
+    console.log(10 < 5);   // false (10 is not less than 5)
+    console.log(10 === 10); // true (10 equals 10)
+    console.log(10 !== 5);  // true (10 is not equal to 5)
+    
+    // ====================
+    // Logical operators - AND, OR
+    // ====================
+    
+    // AND (&&) - BOTH must be true
+    if (true && true) {
+      console.log('Both are true - this runs');
+    }
+    
+    let hasMoney = true;
+    let storeOpen = true;
+    
+    if (hasMoney && storeOpen) {
+      console.log("You can buy something!");
+    }
+    
+    // OR (||) - EITHER can be true
+    let isWeekend = true;
+    let isHoliday = false;
+    
+    if (isWeekend || isHoliday) {
+      console.log("You can rest today!");
+    }
+    
+    // ====================
+    // Ternary operator - shortcut for if/else
+    // ====================
+    
+    // Simple way: condition ? if true : if false
+    const result = true ? 'truthy' : 'falsy';
+    console.log(result);
+    
+    // Real examples:
+    let temperature = 25;
+    let weatherMessage = temperature > 30 ? "It's hot!" : "It's cool";
+    console.log(weatherMessage);
+    
+    let canDrive = age >= 18 ? "Yes, can drive" : "No, cannot drive";
+    console.log(canDrive);
+    
+    // ====================
+    // Truthy and Falsy values
+    // ====================
+    
+    // Falsy: false, 0, "", null, undefined, NaN
+    // Truthy: everything else
+    
+    if ("hello") {
+      console.log("This text is truthy");
+    }
+    
+    if (0) {
+      console.log("This won't run - 0 is falsy");
+    } else {
+      console.log("0 is falsy");
+    }
+  </script>
+
+  <h3>Simple Rules:</h3>
+  <ul>
+    <li><strong>Boolean</strong> = true or false (yes or no)</li>
+    <li><strong>if/else</strong> = Make decisions</li>
+    <li><strong>&&</strong> = AND (both must be true)</li>
+    <li><strong>||</strong> = OR (either can be true)</li>
+    <li><strong>?</strong> = Ternary (short if/else)</li>
+  </ul>
+
+  <h3>Real Life Examples:</h3>
+  <ul>
+    <li>Is user logged in? (true/false)</li>
+    <li>Is item in stock? (true/false)</li>
+    <li>Is form valid? (true/false)</li>
+  </ul>
+</body>
+</html>
