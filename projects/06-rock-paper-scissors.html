@@ -15,7 +15,20 @@
   <!-- SCISSORS button -->
   <button onclick="playgame('scissors');">SCISSORS</button>
 
+  <button onclick="
+         score.wins = 0;
+         score.losses = 0;
+         score.Tie = 0;
+         console.log(score)">Reset score</button>
+
   <script>
+    var score = {
+        wins: 0,
+        losses: 0,
+        Tie: 0,
+
+    }
+
     function playgame(PlayersMove) {
       const computermove = pickComputersMove();
       let results = '';
@@ -38,15 +51,25 @@
         }
       } else if (PlayersMove === 'scissors') {
         if (computermove === 'rock') {
-          results = 'You Lose';
+          results = 'You lose';
         } else if (computermove === 'paper') {
-          results = 'You Win';
+          results = 'You win';
         } else if (computermove === 'scissors') {
           results = 'Tie';
         }
       }
+      
+      if (results === 'You win') {
+          score.wins = score.wins + 1;
+      } else if (results === 'You lose') {
+          score.losses = score.losses + 1;
+      } else if (results === 'Tie') {
+        score.Tie = score.Tie + 1;
+      }
 
-      alert(`You picked ${PlayersMove}. Computer picked ${computermove}. ${results}`);
+      alert(`You picked ${PlayersMove}. Computer picked ${computermove}. ${results}
+            wins:${score.wins},losses:${score.losses},Ties:${score.Tie}`);
+    
     }
 
     function pickComputersMove() {
