@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Objects Practice</title>
+</head>
+<body>
+    <h1>Open Console to See Results (Press F12)</h1>
+
+    <script>
+        console.log("=== JAVASCRIPT OBJECTS FUNDAMENTALS ===");
+
+        // 1. BASIC OBJECT CREATION
+        console.log("\n1. BASIC OBJECT CREATION");
+        const product = {
+            name: 'Aisha',
+            year: 2004
+        };
+        console.log("Product object:", product);
+        console.log("Product name:", product.name);
+        console.log("Product year:", product.year);
+
+        // 2. MODIFYING OBJECT PROPERTIES
+        console.log("\n2. MODIFYING OBJECT PROPERTIES");
+        product.name = 'sumithra';
+        console.log("After name change:", product.name);
+        
+        product.newanyproperty = 'assign';
+        console.log("After adding property:", product);
+
+        // 3. COMPLEX OBJECT WITH NESTED PROPERTIES
+        console.log("\n3. COMPLEX OBJECT");
+        const product2 = {
+            name: 'shirts',
+            'delivery-name': '1 day',
+            rating: { 
+                stars: 4.5,
+                count: 87
+            },
+            fun: function function1() {
+                return 'function inside object';
+            }
+        };
+        
+        console.log("Complex object:", product2);
+        console.log("Dot notation:", product2.name);
+        console.log("Bracket notation:", product2['delivery-name']);
+        console.log("Nested property:", product2.rating.stars);
+        console.log("Method call:", product2.fun());
+
+        // 4. JSON CONVERSION
+        console.log("\n4. JSON CONVERSION");
+        const jsonString = JSON.stringify(product2);
+        console.log("To JSON:", jsonString);
+        
+        const jsObject = JSON.parse(jsonString);
+        console.log("Back to object:", jsObject);
+
+        // 5. PRODUCT COMPARISON EXERCISE
+        console.log("\n5. PRODUCT COMPARISON");
+        const product1 = {
+            name: 'Basketball',
+            price: 2095
+        };
+        
+        console.log("Product1:", product1);
+        
+        product1.price += 500;
+        console.log("After price increase:", product1.price);
+        
+        product1['delivery-Time'] = '3 days';
+        console.log("With delivery time:", product1);
+
+        const product3 = {
+            name: 'Football',
+            price: 2000
+        };
+        console.log("Product3:", product3);
+
+        // Price comparison function
+        function comparePrice(p1, p2) {
+            if (p1.price < p2.price) {
+                return p1;
+            } else {
+                return p2;
+            }
+        }
+        
+        const cheaperProduct = comparePrice(product1, product3);
+        console.log("Cheaper product:", cheaperProduct);
+
+        // Product equality function
+        function isSameProduct(p1, p2) {
+            return p1.name === p2.name && p1.price === p2.price;
+        }
+        
+        const sameProduct = isSameProduct(product1, product3);
+        console.log("Are products same?", sameProduct);
+
+        // 6. STRING METHODS
+        console.log("\n6. STRING METHODS");
+        const Greet = 'GOOD morning!';
+        console.log("Original:", Greet);
+        console.log("Uppercase:", Greet.toUpperCase());
+        console.log("Repeated:", Greet.repeat(2));
+
+        console.log("\n=== ALL EXERCISES COMPLETED ===");
+    </script>
+</body>
+</html>
