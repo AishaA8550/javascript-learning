@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Functions</title>
+    <title>JavaScript Functions Practice</title>
 </head>
 <body>
-  <script>
-    //functions are used to reuse the code
-    function function1() {
-        console.log("hello");
-        console.log(2 + 1)
-    }
-    function1();//calling the function or executing the function
+    <h1>Open Console to See Results (Press F12)</h1>
 
-  </script>
+    <script>
+        console.log("=== JAVASCRIPT FUNCTIONS FUNDAMENTALS ===");
+
+        // 1. BASIC FUNCTION
+        console.log("\n1. BASIC FUNCTION");
+        function function1() {
+            console.log("hello");
+            console.log(2 + 1);
+        }
+        function1(); // Calling the function
+
+        // 2. FUNCTION WITH PARAMETERS
+        console.log("\n2. FUNCTION WITH PARAMETERS");
+        function calculateTax(cost, taxPercent = 0.1) {
+            console.log("Cost:", cost);
+            console.log("Tax amount:", cost * taxPercent);
+            console.log("Total:", cost + (cost * taxPercent));
+        }
+        
+        calculateTax(2000, 0.2);
+        calculateTax(5000); // Using default parameter
+
+        // 3. FUNCTION WITH CONDITIONAL LOGIC
+        console.log("\n3. FUNCTION WITH CONDITIONAL LOGIC");
+        function greet(name) {
+            if (!name) {
+                console.log('Hello there!');
+            } else {
+                console.log(`Hello ${name}`);
+            }
+        }
+        
+        greet('Aisha!');
+        greet();
+
+        // 4. FUNCTION RETURN VALUES
+        console.log("\n4. FUNCTION RETURN VALUES");
+        function multiply(a, b) {
+            return a * b;
+        }
+        
+        const result = multiply(5, 3);
+        console.log("Multiplication result:", result);
+
+        // 5. FUNCTION EXPRESSIONS
+        console.log("\n5. FUNCTION EXPRESSIONS");
+        const square = function(number) {
+            return number * number;
+        };
+        
+        console.log("Square of 4:", square(4));
+
+        // 6. ARROW FUNCTIONS
+        console.log("\n6. ARROW FUNCTIONS");
+        const divide = (a, b) => a / b;
+        console.log("Division result:", divide(10, 2));
+
+    </script>
 </body>
 </html>
