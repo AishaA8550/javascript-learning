@@ -50,6 +50,11 @@
     // Global variable to store quantity
     let quantity = 0;
 
+    const savedQuantity = localStorage.getItem('quantity');
+    if (savedQuantity !== null) {
+        quantity = JSON.parse(savedQuantity);
+    }
+
     function updateCartQuantity(item) {
         if (quantity + item >= 10) {
             console.log(`quantity in cart full: ${quantity}`);
@@ -62,11 +67,9 @@
             return;
         }
         quantity += item;
-        console.log(`Cart quantity: ${quantity}`)
+        console.log(`Cart quantity: ${quantity}`);
+        localStorage.setItem('quantity', JSON.stringify(quantity));
         }
-
-    
-
 
   </script>
 </body>
