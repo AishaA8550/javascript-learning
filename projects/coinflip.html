@@ -9,7 +9,7 @@
         <button onclick="playgame('Head')">Head</button>
         <button onclick="playgame('Tail')">Tail</button>
         <script>
-            let score = {
+            const score = JSON.parse(localStorage.getItem('score')) || {
                 wins:0,
                 losses:0
             }
@@ -26,6 +26,8 @@
                 score.losses++;
             }
             console.log(score);
+
+            localStorage.setItem('score',JSON.stringify(score));
         }
         </script>
     </body>
