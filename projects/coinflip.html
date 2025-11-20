@@ -6,12 +6,15 @@
         </title>
     </head>
     <body>
+        <button onclick="playgame('Head')">Head</button>
+        <button onclick="playgame('Tail')">Tail</button>
         <script>
-            
+            function playgame(guess){
             const randomvalue = Math.random();
             const result = randomvalue < 0.5 ? 'Head':'Tail';
-            const guess = 'Head'
-            console.log(result == guess ? 'Head':'Tail')
+            console.log(result == guess ? 'You win!' : 'You lose!')
+            }
+            
         </script>
     </body>
 </html>
