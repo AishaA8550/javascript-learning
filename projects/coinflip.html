@@ -9,12 +9,24 @@
         <button onclick="playgame('Head')">Head</button>
         <button onclick="playgame('Tail')">Tail</button>
         <script>
+            let score = {
+                wins:0,
+                losses:0
+            }
+
             function playgame(guess){
             const randomvalue = Math.random();
             const result = randomvalue < 0.5 ? 'Head':'Tail';
-            console.log(result == guess ? 'You win!' : 'You lose!')
-            }
+            console.log(result === guess ? 'You win!' : 'You lose!')
             
+            
+            if(guess===result){
+                score.wins++;
+            }else{
+                score.losses++;
+            }
+            console.log(score);
+        }
         </script>
     </body>
 </html>
