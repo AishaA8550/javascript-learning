@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM</title>
+</head>
+<body>
+  <h1>DOM Manipulation Examples</h1>
+  
+  <!-- Example 1: Name Input with inline events -->
+  <h2>1. Name Input with Enter Key Support</h2>
+  <input placeholder="Name" class="js-name-input"
+    onkeydown="
+      if (event.key === 'Enter') {
+        displayMessage();
+      }
+    ">
+  <button onclick="displayMessage();">Submit</button>
+  <p class="js-message"></p>
+
+  <!-- Example 2: Coin Toss with inline onclick -->
+  <h2>2. Coin Toss Selection</h2>
+  <button onclick="document.querySelector('.js-choice').innerHTML = 'YOU CHOSE: Heads';">Heads</button>
+  <button onclick="document.querySelector('.js-choice').innerHTML = 'YOU CHOSE: Tails';">Tails</button>
+  <p class="js-choice"></p>
+
+  <!-- Example 3: Real-time typing with inline onkeyup -->
+  <h2>3. Real-time Typing Display</h2>
+  <input class="js-typeAsItIs" onkeyup="
+    document.querySelector('.js-display').innerHTML = this.value;
+  ">
+  <p class="js-display"></p>
+
+<script>
+  // Function for name display
+  function displayMessage() {
+    const inputElement = document.querySelector('.js-name-input');
+    document.querySelector('.js-message')
+      .innerHTML = `Your name is: ${inputElement.value}`;
+  }
+
+  // Remove or comment out the DOM manipulation code that changes content
+  /*
+  // Gets any element from the page and PUTS IT INSIDE the JS
+  console.log(document.querySelector('button').innerHTML);
+
+  // Every HTML element has an innerHTML property - so when given {innerHTML} it can access the inner content of it 
+  document.querySelector('button').innerHTML = 'Changed';
+
+  // If 2 buttons need to be added then a class is given. It's like a label (starts with a .)
+  document.querySelector('.js-button').innerHTML = 'DB Changes';
+  */
+</script>
+</body>
+</html>
