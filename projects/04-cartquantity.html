@@ -5,7 +5,9 @@
   </head>
   <body>
     <button onclick="
-      console.log(`Cart quantity: ${quantity}`);
+      // Display the cart quantity on the page
+      // instead of in the console.
+      displayCartQuantity();
     ">Show Quantity</button>
 
     <button onclick="
@@ -43,34 +45,41 @@
     <button onclick="
       cartQuantity = 0;
       console.log('Cart was reset.');
-      console.log(`Cart quantity: ${quantity}`);
+
+      // Display the cart quantity after updating.
+      displayCartQuantity();
     ">Reset Cart</button>
 
-  <script>
-    // Global variable to store quantity
-    let quantity = 0;
+    <!-- Create an element to display the cart quantity. -->
+    <p class="js-cart-quantity"></p>
 
-    const savedQuantity = localStorage.getItem('quantity');
-    if (savedQuantity !== null) {
-        quantity = JSON.parse(savedQuantity);
-    }
+    <script>
+      let cartQuantity = 0;
 
-    function updateCartQuantity(item) {
-        if (quantity + item >= 10) {
-            console.log(`quantity in cart full: ${quantity}`);
-            alert('quantity in cart full')
-            return;
-        } 
-        if (quantity + item < 0) {
-            console.log(`quantity in cart empty: ${quantity}`);
-            alert('quantity in cart empty')
-            return;
-        }
-        quantity += item;
-        console.log(`Cart quantity: ${quantity}`);
-        localStorage.setItem('quantity', JSON.stringify(quantity));
+      // Display the cart quantity when the page loads.
+      displayCartQuantity();
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert('The cart is full');
+          return;
         }
 
-  </script>
-</body>
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in the cart');
+          return;
+        }
+
+        cartQuantity += change;
+
+        // Display the cart quantity after updating.
+        displayCartQuantity();
+      }
+
+      function displayCartQuantity() {
+        document.querySelector('.js-cart-quantity')
+          .innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
 </html>
