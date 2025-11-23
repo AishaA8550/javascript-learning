@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Project</title>
+  <style>
+    body{
+      font-family:  Arial;
+    }
+
+    .subscribe-button {
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      cursor: pointer;
+      border-radius: 50px;
+      margin-bottom: 30px;
+
+    }
+
+    .is-subscribed {
+      background-color: rgb(240,240,240);
+      color: black;
+    }
+
+    .cost-button {
+      font-size :15px;
+      padding: 10px;
+    }
+
+    .calculate-button{
+      padding: 12px 15px;
+      background-color: green;
+      color: white;
+      font-size: 15;
+      border: none;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="Subscribe()" class= 'js-subscribe-button subscribe-button'>Subscribe</button>
+   
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="cost of order" class="js-cost-button  cost-button" onkeydown="handleCostKeyDown(event)">
+    <button onclick="calculateTotal()" class="calculate-button">calculate</button>
+    <p class = "js-totalcost"></p>
+
+
+<script>
+
+    function handleCostKeyDown(event) {
+     if (event.key === 'Enter') {
+      calculateTotal();
+    }
+    }
+
+    function calculateTotal(){
+        const inputElement = document.querySelector('.js-cost-button');
+        // Convert the numbers to cents by * 100.
+        let cost = Number(inputElement.value) *100;
+        if (cost < 4000 ) {
+            cost += 1000;
+        }
+     document.querySelector('.js-totalcost').innerHTML = `$${cost/100}`;
+    }
+
+   
+
+    function Subscribe() {
+    const ElementText = document.querySelector('.js-subscribe-button')
+    
+    if (ElementText.innerText === 'Subscribe') {
+        ElementText.innerHTML = 'Subscribed'
+        ElementText.classList.add 
+        ('is-subscribed');
+    } else {
+        ElementText.innerHTML = 'Subscribe'
+        ElementText.classList.remove
+        ('is-subscribed');
+    }
+
+}
+
+
+</script>
+</body>
+</html>
